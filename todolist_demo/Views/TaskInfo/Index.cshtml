@@ -1,0 +1,33 @@
+﻿@model IEnumerable<todolist_demo.Models.TaskInfo>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Tasks Available</h2>
+
+@if (!Model.Any())
+{
+    <p>We don't have any customers yet.</p>
+}
+else
+{
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr>
+                <th>Movies</th>
+                <th>Genre</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var task in Model)
+            {
+                <tr>
+                    <td>@task.Name</td>
+                    <td>@task.Created</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+
